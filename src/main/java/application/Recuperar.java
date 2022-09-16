@@ -7,8 +7,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Program {
+public class Recuperar {
     public static void main(String[] args) {
+
+        //RECUPERAR DADOS
 
         Connection conn = null;
         Statement st = null;
