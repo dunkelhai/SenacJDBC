@@ -1,10 +1,13 @@
 package application;
 
 import db.DB;
+import db.DbIntegrityException;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
-public class Atualizar {
+public class Deletar {
     public static void main(String[] args) {
 
         //ATUALIZAR DADOS
@@ -14,19 +17,18 @@ public class Atualizar {
         try{
             conn = DB.getConnection();
 
-            st = conn.prepareStatement(
-                    "update seller " +
-                            "set BaseSalary = BaseSalary + ? " +
-                            "where " +
-                            "(DepartmentId = ?)");
-            st.setDouble(1, 200.00);
-            st.setInt(2,2);
+            st = conn.prepareStatement("" +
+                    "delete from department " +
+                    "where " +
+                    "Id = ?");
+
+            st.setInt(1,5);
 
             int rowsAffected = st.executeUpdate();
 
             System.out.println("Done! Rows affected: " + rowsAffected);
         } catch (SQLException e){
-            e.printStackTrace();
+            throw new DbIntegrityException(e.getMessage());
         } finally {
             DB.closeStatement(st);
             DB.closeConnection();
