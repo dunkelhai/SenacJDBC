@@ -34,6 +34,5 @@ public class Deletar {
             DB.closeConnection();
         }
 
-
     }
 }
