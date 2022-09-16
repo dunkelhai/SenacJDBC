@@ -22,7 +22,7 @@ public class Transacoes {
 
             int rows1 = st.executeUpdate("update seller" +
                     "set BaseSalary = 1090.00 where DepartmentId = 1");
-            
+
 //            int x = 1;
 //            if (x < 2) {
 //                throw new SQLException("Erro falso");
