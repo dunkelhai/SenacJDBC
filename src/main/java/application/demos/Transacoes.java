@@ -1,4 +1,4 @@
-package application;
+package application.demos;
 
 import db.DB;
 import db.DbException;
