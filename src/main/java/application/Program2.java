@@ -5,6 +5,7 @@ import model.dao.DepartmentDao;
 import model.dao.impl.DepartmentDaoJDBC;
 import model.entities.Department;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Program2 {
@@ -16,18 +17,11 @@ public class Program2 {
         Department dep1 = departmentDao.findById(2);
         System.out.println(dep1);
 
-//        System.out.println("\n==== TESTE 2: seller findByDepartment ====");
-//        Department department = new Department(2, null);
-//        List<Seller> list = sellerDao.findByDepartment(department);
-//        for (Seller obj : list){
-//            System.out.println(obj);
-//        }
-//
-//        System.out.println("\n==== TESTE 3: seller findAll ====");
-//        list = sellerDao.findAll();
-//        for (Seller obj : list){
-//            System.out.println(obj);
-//        }
+        System.out.println("\n==== TESTE 2: department findAll ====");
+        List<Department> list = departmentDao.findAll();
+        for (Department obj : list){
+            System.out.println(obj);
+        }
 //
 //        System.out.println("\n==== TESTE 4: seller insert ====");
 //        Seller newSeller = new Seller(null, "Joana", "joana@gmail.com", new Date(), 4000.00, department);
