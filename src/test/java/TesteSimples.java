@@ -2,9 +2,7 @@ import model.dao.DaoFactory;
 import model.dao.DepartmentDao;
 import org.junit.Test;
 
-import java.util.Scanner;
-
-public class ProgramaTeste {
+public class TesteSimples {
     DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 
    @Test
@@ -18,6 +16,5 @@ public class ProgramaTeste {
             assert true;
         }
     }
-
 }
 
