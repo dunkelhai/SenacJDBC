@@ -7,10 +7,12 @@ import model.entities.Seller;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) {
 
+        Scanner entrada = new Scanner(System.in);
         SellerDao sellerDao = DaoFactory.createSellerDao();
 
 //        System.out.println("==== TESTE 1: seller findById ====");
@@ -40,6 +42,14 @@ public class Program {
 //        seller.setName("TEste Teste");
 //        sellerDao.update(seller);
 //        System.out.println("Updated! " + seller);
+
+        System.out.println("\n==== TESTE 6: seller delete ====");
+        System.out.println("Digite o ID do vendedor que deseja apagar do banco: ");
+        int escolha = entrada.nextInt();
+        sellerDao.deleteById(escolha);
+        System.out.println("Deleted! ");
+
+        entrada.close();
 
     }
 }
